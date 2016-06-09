@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter lux,$(TARGET_DEVICE)),)
+ifneq ($(filter athene,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 

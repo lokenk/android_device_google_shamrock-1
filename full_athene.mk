@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-# Inherit from lux device
-$(call inherit-product, device/motorola/lux/device.mk)
+# Inherit from athene device
+$(call inherit-product, device/motorola/athene/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := lux
-PRODUCT_NAME := full_lux
+PRODUCT_DEVICE := athene
+PRODUCT_NAME := full_athene
 
-$(call inherit-product-if-exists, vendor/motorola/lux/lux-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/athene/athene-vendor.mk)

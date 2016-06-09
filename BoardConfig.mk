@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/motorola/msm8916-common/BoardConfigCommon.mk
+include device/motorola/msm8952-common/BoardConfigCommon.mk
 
 -include vendor/motorola/athene/BoardConfigVendor.mk
 
@@ -30,11 +30,11 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_athene
 TARGET_KERNEL_CONFIG := cm_athene_defconfig
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432	# 32768 * 1024 mmcblk0p31
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432	# 32768 * 1024 mmcblk0p32
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2852126720	# 2785280 * 1024 mmcblk0p41
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 8388608	# 8192 * 1024 mmcblk0p29
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 11815223296 # 11538304 * 1024 mmcblk0p42
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216	# 16384 * 1024 mmcblk0p28
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216	# 16384 * 1024 mmcblk0p29
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560	# 2621440 * 1024 mmcblk0p47
+BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432	# 32768 * 1024 mmcblk0p30
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27258650624 # 26619776 * 1024 mmcblk0p48
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
