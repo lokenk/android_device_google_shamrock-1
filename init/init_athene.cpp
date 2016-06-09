@@ -42,7 +42,7 @@ static void single_sim(void);
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
+/*  char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
     char sku[PROP_VALUE_MAX];
     char carrier[PROP_VALUE_MAX];
@@ -120,7 +120,7 @@ void vendor_load_properties()
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, sku, devicename);
+    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, sku, devicename); */
 }
 
 static void dual_sim(void)

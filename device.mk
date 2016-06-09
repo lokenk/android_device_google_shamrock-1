@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from msm8916-common
-$(call inherit-product, device/motorola/msm8916-common/msm8916.mk)
+# Inherit from msm8952-common
+$(call inherit-product, device/motorola/msm8952-common/msm8952.mk)
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -38,8 +38,8 @@ PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 PRODUCT_COPY_FILES += \
-    device/motorola/lux/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/motorola/lux/configs/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
+    device/motorola/athene/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/motorola/athene/configs/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
 
 PRODUCT_PACKAGES += \
     libnfc \
@@ -58,4 +58,4 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/thermal-engine-lux.conf:system/etc/thermal-engine-lux.conf
+     $(LOCAL_PATH)/configs/thermal-engine-athene.conf:system/etc/thermal-engine-athene.conf

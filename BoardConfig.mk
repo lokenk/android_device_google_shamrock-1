@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,19 +15,19 @@
 
 include device/motorola/msm8916-common/BoardConfigCommon.mk
 
--include vendor/motorola/lux/BoardConfigVendor.mk
+-include vendor/motorola/athene/BoardConfigVendor.mk
 
-DEVICE_PATH := device/motorola/lux
+DEVICE_PATH := device/motorola/athene
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := lux,xt1562,xt1563
+TARGET_OTA_ASSERT_DEVICE := athene,xt1626,xt1640,xt1641
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_lux
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lux
+TARGET_INIT_VENDOR_LIB := libinit_athene
+TARGET_RECOVERY_DEVICE_MODULES := libinit_athene
 
 # Kernel
-TARGET_KERNEL_CONFIG := lux_defconfig
+TARGET_KERNEL_CONFIG := cm_athene_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432	# 32768 * 1024 mmcblk0p31

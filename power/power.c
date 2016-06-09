@@ -23,7 +23,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#define LOG_TAG "MSM8939 PowerHAL"
+#define LOG_TAG "MSM8952 PowerHAL"
 #include <utils/Log.h>
 
 #include <hardware/hardware.h>
@@ -196,7 +196,7 @@ struct power_module HAL_MODULE_INFO_SYM = {
         .module_api_version = POWER_MODULE_API_VERSION_0_2,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = POWER_HARDWARE_MODULE_ID,
-        .name = "MSM8939 Power HAL",
+        .name = "MSM8952 Power HAL",
         .author = "The CyanogenMod Project",
         .methods = &power_module_methods,
     },
