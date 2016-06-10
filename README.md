@@ -1,22 +1,22 @@
-Unified Device Tree for Moto X Play (lux)
+Device Tree for Moto G4 Plus (athene)
 ===========================================
 
-The Motorola Moto X Play (codenamed _"lux"_) is a mid-range smartphone from Motorola Mobility.
-It was released in August 2015.
+The Moto G4 Plus (codenamed _"athene"_) is a mid-range smartphone from Motorola Mobility.
+It was released in May,2016.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core 1.7/1.2 GHz Cortex-A53
-Chipset | Qualcomm MSM8939 Snapdragon 615
+CPU     | Octa-core 1.5/1.2 GHz Cortex-A53
+Chipset | Qualcomm MSM8952 Snapdragon 617
 GPU     | Adreno 405
 Memory  | 2 GB RAM
-Shipped Android Version | 5.1.1
+Shipped Android Version | 6.0.1
 Storage | 16/32 GB
-MicroSD | Up to 128 GB
-Battery | Li-Ion 3630mAh battery
-Display | 1080 x 1920 pixels, 5.5 inches (~403 ppi pixel density)
-Camera  | 21 MP, 5344 x 4008 pixels, autofocus, LED flash
+MicroSD | Up to 256 GB
+Battery | Li-Ion 3000mAh battery
+Display | 1080 x 1920 pixels, 5.5 inches (~401 ppi pixel density)
+Camera  | 16 MP, autofocus, LED flash
 
-Copyright 2015 - The CyanogenMod Project.
+Copyright 2016 - The CyanogenMod Project.
 
-![Moto X Play](https://wiki.cyanogenmod.org/images/thumb/8/81/Osprey.png/314px-Osprey.png "Moto X Play")
+![Moto G4 Plus](http://images.fonearena.com/blog/wp-content/uploads/2016/05/Moto-G4-Plus_fonearena-16-1024x742.jpg "Moto G4 Plus")
