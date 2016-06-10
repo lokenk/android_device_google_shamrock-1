@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/athene/full_lux.mk)
+$(call inherit-product, device/motorola/athene/full_athene.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
