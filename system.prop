@@ -1,4 +1,4 @@
-# system.prop for lux
+# system.prop for athene
 
 # Audio
 persist.audio.fluence.mode=endfire
