@@ -42,7 +42,7 @@ static void single_sim(void);
 
 void vendor_load_properties()
 {
-/*  char platform[PROP_VALUE_MAX];
+    char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
     char sku[PROP_VALUE_MAX];
     char carrier[PROP_VALUE_MAX];
@@ -70,7 +70,7 @@ void vendor_load_properties()
     if (!force_msim && (ISMATCH(carrier, "retgb") || ISMATCH(carrier, "reteu") || ISMATCH(carrier, "retde")
             || ISMATCH(carrier, "vfau"))) {
         // These are single SIM XT1562 devices
-        single_sim();
+/*        single_sim();
         property_set("ro.product.device", "lux");
         property_set("ro.build.description", "lux_reteu-user 5.1.1 LPD23.118-10 15 release-keys");
         property_set("ro.build.fingerprint", "motorola/lux_reteu/lux:5.1.1/LPD23.118-10/15:user/release-keys");
@@ -79,24 +79,22 @@ void vendor_load_properties()
         property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
         property_set("persist.radio.mot_ecc_custid", "emea");
         property_set("persist.radio.mot_ecc_enabled", "1");
-        property_set("persist.radio.process_sups_ind", "0");
+        property_set("persist.radio.process_sups_ind", "0"); */
     }
-    else if (ISMATCH(sku, "XT1562") || ISMATCH(radio, "0x4")) {
+    else if (ISMATCH(sku, "XT1643") || ISMATCH(radio, "0x4")) {
         dual_sim();
-        property_set("ro.product.device", "lux_uds");
-        property_set("ro.build.description", "lux_retasia_ds-user 5.1.1 LPD23.118-10 14 release-keys");
-        property_set("ro.build.fingerprint", "motorola/lux_retasia_ds/lux_uds:5.1.1/LPD23.118-10/14:user/release-keys");
-        property_set("ro.build.product", "lux_uds");
-        property_set("ro.mot.build.customerid", "retasiaall");
-        property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
-        property_set("persist.radio.mot_ecc_custid", "emea");
+        property_set("ro.product.device", "athene_f");
+        property_set("ro.build.description", "athene_f-user 6.0.1 MPJ24.139-23.1 1 release-keys");
+        property_set("ro.build.fingerprint", "motorola/athene_f/athene_f:6.0.1/MPJ24.139-23.1/1:user/release-keys");
+        property_set("ro.build.product", "athene");
+        property_set("ro.mot.build.customerid", "retail");
+        property_set("persist.radio.mot_ecc_custid", "common");
         property_set("persist.radio.mot_ecc_enabled", "1");
-        property_set("persist.radio.process_sups_ind", "0");
     }
     else if (force_msim || ISMATCH(carrier, "retbr") || ISMATCH(carrier, "retla") || ISMATCH(carrier, "tefbr")
             || ISMATCH(carrier, "timbr") || ISMATCH(carrier, "retmx")) {
         // These are dual SIM XT1563 devices
-        dual_sim();
+/*        dual_sim();
         property_set("ro.product.device", "lux_uds");
         property_set("ro.build.description", "lux_retla_ds-user 5.1.1 LPD23.118-6.1 2 release-keys");
         property_set("ro.build.fingerprint", "motorola/lux_retla_ds/lux_uds:5.1.1/LPD23.118-6.1/2:user/release-keys");
@@ -104,10 +102,10 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "retla");
         property_set("ro.gsm.data_retry_config", "default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000");
         property_set("persist.radio.mot_ecc_enabled", "1");
-        property_set("persist.radio.process_sups_ind", "1");
+        property_set("persist.radio.process_sups_ind", "1");*/
     }
     else if (ISMATCH(sku, "XT1563") || ISMATCH(radio, "0x8")) {
-        single_sim();
+/*        single_sim();
         property_set("ro.product.device", "lux");
         property_set("ro.build.description", "lux_retca-user 5.1.1 LPD23.118-10 19 release-keys");
         property_set("ro.build.fingerprint", "motorola/lux_retca/lux:5.1.1/LPD23.118-10/19:user/release-keys");
@@ -115,12 +113,12 @@ void vendor_load_properties()
         property_set("ro.mot.build.customerid", "retca");
         property_set("ro.gsm.data_retry_config", "");
         property_set("persist.radio.mot_ecc_enabled", "");
-        property_set("persist.radio.process_sups_ind", "1");
+        property_set("persist.radio.process_sups_ind", "1");*/
     }
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, sku, devicename); */
+    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, sku, devicename);
 }
 
 static void dual_sim(void)
