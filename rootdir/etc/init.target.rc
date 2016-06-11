@@ -26,22 +26,6 @@
 #
 
 on boot
-    # AK09912 driver parameter permissions
-    chown system compass /sys/class/compass/akm09912/accel
-    chmod 0660 /sys/class/compass/akm09912/accel
-    chown system compass /sys/class/compass/akm09912/delay_acc
-    chmod 0660 /sys/class/compass/akm09912/delay_acc
-    chown system compass /sys/class/compass/akm09912/enable_acc
-    chmod 0660 /sys/class/compass/akm09912/enable_acc
-    chown system compass /sys/class/compass/akm09912/delay_fusion
-    chmod 0660 /sys/class/compass/akm09912/delay_fusion
-    chown system compass /sys/class/compass/akm09912/enable_fusion
-    chmod 0660 /sys/class/compass/akm09912/enable_fusion
-    chown system compass /sys/class/compass/akm09912/delay_mag
-    chmod 0660 /sys/class/compass/akm09912/delay_mag
-    chown system compass /sys/class/compass/akm09912/enable_mag
-    chmod 0660 /sys/class/compass/akm09912/enable_mag
-
     # Switch to interactive and let PowerHAL configure it
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
@@ -59,20 +43,6 @@ on boot
 
     chown system system /sys/module/cpu_boost/parameters/input_boost_freq
     chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
-
-on post-fs-data
-    # AK09912 calibration file directory
-    mkdir /data/misc/akmd 0770 system compass
-
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
-# Start AKM executable
-service akmd09912 /system/bin/akmd09912
-    class main
-    user compass
-    group compass misc input
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler fiops
