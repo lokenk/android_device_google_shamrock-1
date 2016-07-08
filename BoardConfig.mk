@@ -47,7 +47,8 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --kernel_offset 0x00008000 --second_offset 0x00f00000
 TARGET_KERNEL_ARCH := arm
-TARGET_PREBUILT_KERNEL := device/google/shamrock/kernel
+TARGET_KERNEL_SOURCE := kernel/google/shamrock
+TARGET_KERNEL_CONFIG := cyanogenmod_shamrock_defconfig 
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Partitions
