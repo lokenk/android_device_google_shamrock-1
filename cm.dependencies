@@ -1,6 +1,11 @@
+
 [
-  {
-    "repository":  "android_device_qcom_common",
-    "target_path": "device/qcom/common"
-  }
+ {
+   "repository": "android_device_qcom_common",
+   "target_path": "device/qcom/common"
+ },
+ {
+   "repository": "android_kernel_motorola_msm8956",
+   "target_path": "kernel/google/shamrock"
+ }
 ]
