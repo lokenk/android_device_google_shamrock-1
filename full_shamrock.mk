@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
 #
 
 # Inherit from athene device
-$(call inherit-product, device/motorola/athene/device.mk)
+$(call inherit-product, device/google/shamrock/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := athene
-PRODUCT_NAME := full_athene
+PRODUCT_DEVICE := shamrock
+PRODUCT_NAME := full_shamrock
 
-$(call inherit-product-if-exists, vendor/motorola/athene/athene-vendor.mk)
+$(call inherit-product-if-exists, vendor/google/shamrock/shamrock-vendor.mk)
