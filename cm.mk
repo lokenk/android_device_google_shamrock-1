@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/athene/full_athene.mk)
-
-# Enhanced NFC
-#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, device/google/shamrock/full_shamrock.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := athene
-PRODUCT_NAME := cm_athene
-PRODUCT_BRAND := Motorola
-PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := athene
+PRODUCT_DEVICE := shamrock
+PRODUCT_NAME := cm_shamrock
+PRODUCT_BRAND := Google
+PRODUCT_MANUFACTURER := General Mobile
+PRODUCT_RELEASE_NAME := shamorck
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="Moto G4"
+    BUILD_FINGERPRINT=6.0.1/M3D32/2827466:user/release-keys \
+    PRIVATE_BUILD_DESC="shamrock-user 6.0.1 M3D32 2827466 release-keys"
