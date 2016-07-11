@@ -51,6 +51,10 @@ TARGET_KERNEL_SOURCE := kernel/google/shamrock
 TARGET_KERNEL_CONFIG := cm_shamrock_defconfig  
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
+# Custom bootimage
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := device/google/shamrock/custombootimg.mk
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
