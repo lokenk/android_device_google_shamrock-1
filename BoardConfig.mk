@@ -50,6 +50,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/google/shamrock
 TARGET_KERNEL_CONFIG := cm_shamrock_defconfig  
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 
 # Custom bootimage
 BOARD_CUSTOM_BOOTIMG := true
