@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 MKELF := device/google/shamrock/tools/mkelf.py
+DEVICE_KERNEL := device/google/shamrock
 INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
 $(INSTALLED_BOOTIMAGE_TARGET): $(DEVICE_KERNEL)/kernel $(INSTALLED_RAMDISK_TARGET) $(MKBOOTIMG) $(MINIGZIP) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Boot image: $@")
