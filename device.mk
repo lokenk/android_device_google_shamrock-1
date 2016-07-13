@@ -22,6 +22,16 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 $(shell mkdir -p $OUT/obj/KERNEL_OBJ/usr)
 $(shell touch $OUT/obj/KERNEL_OBJ/usr/export_includes)
 
+# OTAUpdates
+PRODUCT_PACKAGES += \
+    OTAUpdates
+
+# OTA dependencies
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=CyanogenMod-13.0-for-Shamrock \
+        ro.ota.version=$(shell date +%Y%m%d) \
+        ro.ota.manifest=https://raw.githubusercontent.com/TeamOne-Devs/ota-shamrock/master/cm-13.0.xml
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
