@@ -15,12 +15,17 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+DEVICE_PATH := device/google/shamrock
+
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Hack for prebuilt kernel
-$(shell mkdir -p $OUT/obj/KERNEL_OBJ/usr)
-$(shell touch $OUT/obj/KERNEL_OBJ/usr/export_includes)
+$(shell mkdir -p mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usr)
+$(shell mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usrr/export_includes)
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/kernel:kernel \
 
 # OTAUpdates
 PRODUCT_PACKAGES += \
