@@ -21,11 +21,20 @@ DEVICE_PATH := device/google/shamrock
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Hack for prebuilt kernel
-$(shell mkdir -p mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usr)
+$(shell mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usr)
 $(shell mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usrr/export_includes)
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/kernel:kernel \
+
+#Cyanogen Blobs
+$(shell mkdir -p out/target/product/shamrock/obj/lib)
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/lib/libaudiopolicyenginedefault.so:obj/lib/libaudiopolicyenginedefault.so \
+    $(DEVICE_PATH)/lib/libaudiopolicymanager.so:obj/lib/libaudiopolicymanager.so \
+    $(DEVICE_PATH)/lib/libaudiopolicymanagerdefault.so:obj/lib/libaudiopolicymanagerdefault.so \
+    $(DEVICE_PATH)/lib/libaudiopolicyservice.so:obj/lib/libaudiopolicyservice.so 
 
 # OTAUpdates
 PRODUCT_PACKAGES += \

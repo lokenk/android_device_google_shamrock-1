@@ -5,10 +5,6 @@
    "target_path": "device/qcom/common"
  },
  {
-   "repository": "Hercules_shamrock",
-   "target_path": "kernel/google/shamrock"
-},
- {
    "repository": "OTAUpdates",
    "target_path": "packages/apps/OTAUpdates"
 ]
