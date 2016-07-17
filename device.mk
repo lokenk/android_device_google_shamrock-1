@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
 
 #Cyanogen Blobs
 $(shell mkdir -p out/target/product/shamrock/obj/lib)
+$(shell mkdir -p out/target/product/shamrock/obj/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/export_includes)
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/lib/libaudiopolicyenginedefault.so:obj/lib/libaudiopolicyenginedefault.so \

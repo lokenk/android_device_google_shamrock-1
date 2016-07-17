@@ -7,4 +7,8 @@
  {
    "repository": "OTAUpdates",
    "target_path": "packages/apps/OTAUpdates"
+ },
+ {
+   "repository": "android_hardware_qcom_display-caf",
+   "target_path": "hardware/qcom/display-caf"
 ]
