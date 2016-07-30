@@ -5,10 +5,7 @@
    "target_path": "device/qcom/common"
  },
  {
-   "repository": "OTAUpdates",
-   "target_path": "packages/apps/OTAUpdates"
- },
- {
-   "repository": "android_hardware_qcom_display-caf",
-   "target_path": "hardware/qcom/display-caf"
+   "repository": "android_kernel_google_lego",
+   "target_path": "kernel/google/lego"
+ }
 ]
