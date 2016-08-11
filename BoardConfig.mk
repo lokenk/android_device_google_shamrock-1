@@ -41,16 +41,29 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
-# Kernel (Hercules kernel sources)
-BOARD_KERNEL_CMDLINE := ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
+# Kernel
+TARGET_KERNEL_ARCH=arm
+TARGET_KERNEL_HEADER_ARCH=arm
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+TARGET_USES_UNCOMPRESSED_KERNEL := true
+TARGET_KERNEL_SOURCE := kernel/google/lego
+TARGET_KERNEL_CONFIG := msm8952-perf_defconfig
+BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --kernel_offset 0x00008000 --second_offset 0x00f00000
-TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel/google/lego
-TARGET_KERNEL_CONFIG := cyanogenmod_shamrock_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
+BOARD_KERNEL_OFFSET      := 0x00008000
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_OFFSET) --kernel_offset 0x00f00000 --kernel_tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -64,6 +77,12 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
+# CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen/cmhw \
+    device/google/shamrock/cmhw
 
 # Audio
 AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
