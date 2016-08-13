@@ -43,6 +43,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.ota.version=$(shell date +%Y%m%d) \
         ro.ota.manifest=https://raw.githubusercontent.com/TeamOne-Devs/ota-shamrock/master/cm-13.0.xml
 
+# RC's
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc
+ 
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
