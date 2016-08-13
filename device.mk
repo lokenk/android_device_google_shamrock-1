@@ -20,16 +20,12 @@ DEVICE_PATH := device/google/shamrock
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Hack for prebuilt kernel
-$(shell mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usr)
-$(shell mkdir -p out/target/product/shamrock/obj/KERNEL_OBJ/usrr/export_includes)
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/kernel:kernel \
 
 #Cyanogen Blobs
-$(shell mkdir -p out/target/product/shamrock/obj/lib)
-$(shell mkdir -p out/target/product/shamrock/obj/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/export_includes)
+$(shell mkdir -p $(OUT)/obj/lib)
+$(shell mkdir -p $(OUT)/obj/SHARED_LIBRARIES/libaudiopolicymanager_intermediates/export_includes)
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/lib/libaudiopolicyenginedefault.so:obj/lib/libaudiopolicyenginedefault.so \
